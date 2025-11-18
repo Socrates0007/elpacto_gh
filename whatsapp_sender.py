@@ -46,7 +46,7 @@ def _row_to_message(row: List[str]) -> str:
         f"Phone: {kv.get('PHONE NUMBER', '')}",
         f"Location: {kv.get('LOCATION', '')}",
         f"Items:",
-        f" - {kv.get('PRODUCT', '')} x{kv.get('QUANTITY', '')} @ NGN{kv.get('PRICE', '')}",
+        f" - {kv.get('PRODUCT', '')} x{kv.get('QUANTITY', '')} @ GHC {kv.get('PRICE', '')}",
     ]
 
     # ✅ Address from Column P
@@ -97,7 +97,7 @@ def send_new_personal_rows_via_whatsapp():
     for person in PEOPLE:
         name = person["name"]
         phone = person["whatsapp"]
-        ws = client.open_by_key(person["sheet_id"]).worksheet('October')
+        ws = client.open_by_key(person["sheet_id"]).worksheet('November')
         all_vals = ws.get_all_values()
         if not all_vals:
             continue
