@@ -97,7 +97,7 @@ def send_new_personal_rows_via_whatsapp():
     for person in PEOPLE:
         name = person["name"]
         phone = person["whatsapp"]
-        ws = client.open_by_key(person["sheet_id"]).worksheet('January')
+        ws = client.open_by_key(person["sheet_id"]).worksheet('Febraury')
         all_vals = ws.get_all_values()
         if not all_vals:
             continue
